@@ -1,5 +1,7 @@
 # Movie Recommendation System
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AhmedEhab2022/movie_recommendation_system/blob/main/Movie_Recommendation_System.ipynb)
+
 A comprehensive machine learning project that implements multiple collaborative filtering approaches to build an intelligent movie recommendation system. This project demonstrates three distinct recommendation algorithms and evaluates their performance using the MovieLens 100K dataset to provide personalized movie suggestions.
 
 ## Project Overview
@@ -19,7 +21,7 @@ The project uses the MovieLens 100K dataset containing:
 - **User Demographics**: Age, gender, occupation
 - **Time Period**: Ratings collected over 7 months
 
-Dataset provides rich interaction data with no missing values in core rating matrix.
+The dataset provides rich interaction data with no missing values in the core rating matrix.
 
 ## Methodology
 
@@ -57,9 +59,9 @@ The analysis reveals **performance comparison across three algorithms**:
 
 | Algorithm                      | Approach                    | Strengths                          | Use Cases                  | Precision@5 |
 | ------------------------------ | --------------------------- | ---------------------------------- | -------------------------- | ----------- |
-| **User-Based Collaborative**   | Find similar users          | Captures user preferences patterns | New item recommendations   | Variable    |
-| **Item-Based Collaborative**   | Find similar movies         | Stable, interpretable results      | Content-based suggestions  | Variable    |
-| **Matrix Factorization (SVD)** | Latent factor decomposition | Scalable, handles sparsity well    | Large-scale recommendation | Variable    |
+| **User-Based Collaborative**   | Find similar users          | Captures user preferences patterns | New item recommendations   | ~6%         |
+| **Item-Based Collaborative**   | Find similar movies         | Stable, interpretable results      | Content-based suggestions  | ~5%         |
+| **Matrix Factorization (SVD)** | Latent factor decomposition | Scalable, handles sparsity well    | Large-scale recommendation | ~33%        |
 
 ## Technologies Used
 
@@ -67,7 +69,7 @@ The analysis reveals **performance comparison across three algorithms**:
 - **Machine Learning**: scikit-learn (TruncatedSVD, cosine_similarity, train_test_split)
 - **Mathematical Operations**: Matrix operations, similarity computations
 - **Evaluation Metrics**: Precision@K for recommendation quality assessment
-- **Environment**: Jupyter Notebook
+- **Environment**: Colab
 
 ## Requirements
 
@@ -80,35 +82,21 @@ scikit-learn
 jupyter
 ```
 
-## Getting Started
+## How to Run
 
-### Installation
+### Option 1: Google Colab (Recommended)
 
-1. **Clone the repository**
+1. Click the "Open in Colab" badge above
+2. Upload the dataset to your Google Drive in the appropriate folder
+3. Run all cells in sequence
 
-   ```bash
-   git clone https://github.com/AhmedEhab2022/movie_recommendation_system.git
-   cd movie_recommendation_system
-   ```
+### Option 2: Local Setup
 
-2. **Install dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Launch Jupyter Notebook**
-   ```bash
-   jupyter notebook Movie_Recommendation_System.ipynb
-   ```
-
-### Usage
-
-1. Open the Jupyter notebook `Movie_Recommendation_System.ipynb`
-2. Run all cells sequentially to reproduce the analysis
-3. Explore different recommendation algorithms and their outputs
-4. Experiment with hyperparameters and evaluation metrics
-5. Generate personalized recommendations for any user ID
+1. Clone this repository: `git clone https://github.com/AhmedEhab2022/movie_recommendation_system.git`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Open `Movie_Recommendation_System.ipynb` in Jupyter
+4. Update the data path to point to your local dataset
+5. Run all cells
 
 ## Project Structure
 
@@ -163,7 +151,7 @@ The project includes comprehensive visualizations:
 
 The system uses **Precision@K (P@K)** evaluation technique:
 
-- **Precision@5**: Measures relevant recommendations in top 5 suggestions
+- **Precision@5**: Measures relevant recommendations in the top 5 suggestions
 - **Cross-validation**: Train-test split ensures unbiased evaluation
 - **User-specific metrics**: Individual precision scores for comprehensive assessment
 - **Algorithm comparison**: Direct performance comparison across methods
@@ -183,3 +171,4 @@ The system uses **Precision@K (P@K)** evaluation technique:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
